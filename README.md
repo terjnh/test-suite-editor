@@ -31,6 +31,7 @@
 ## Commit message:
 v0.0.4
 - Functionality to add new parent test to config.json
+- Updates HomeScreen upon addition of new parent test
 
 ## TODO:
 - After adding parent test, need to bring user back to home screen
