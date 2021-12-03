@@ -29,9 +29,12 @@
 
 
 ## Commit message:
-v0.0.4
-- Functionality to add new parent test to config.json
-- Updates HomeScreen upon addition of new parent test
+v0.0.5
+- Changed '3x click to update' in ChildTestDetail.
+  - Used useEffect to trigger an update method when asynchronous setState is complete
+- Add new parent test 
+  - Add button text changed
+  - "subtests" key-value added
 
 ## TODO:
 - After adding parent test, need to bring user back to home screen

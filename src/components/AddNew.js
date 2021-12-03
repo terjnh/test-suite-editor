@@ -15,8 +15,8 @@ const AddNew = (props) => {
     const [initLoad, setInitLoad] = useState(true);
     const [newTestObj, setNewTestObj] = useState({});
 
-    let newName     = React.createRef();
-    let newMessage  = React.createRef();
+    let newName = React.createRef();
+    let newMessage = React.createRef();
 
     // modal
     const [modalOpen, setModalOpen] = React.useState(false);
@@ -54,7 +54,12 @@ const AddNew = (props) => {
             "id": testID,
             "name": newName.current.value,
             "message": newMessage.current.value,
-            "enabled": "true"
+            "enabled": "true",
+            "subtests": {
+                "executionType": "sequential",
+                "tests": [
+                ]
+            }
         })
     };
 
@@ -96,13 +101,8 @@ const AddNew = (props) => {
                     addNewTestObj();
                     setInitLoad(false);
                     setModalOpen(true);
-                }}>  Sample Obj Append
+                }}>  Add
             </button>
-            {/* <br></br><br></br>
-            <button className="button-greenBg-whiteText"
-                onClick={() => {addNewTestObj()}}>
-                Test New Object Add
-            </button> */}
 
 
 

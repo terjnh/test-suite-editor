@@ -9,6 +9,9 @@ const ChildTestDetail = (props) => {
     // console.log("ChildTestDetail-propsObject:", props.location.state.test)
     const parentPathname = props.location.pathname.split("/")[1]
 
+    // initLoad checks if page is first loaded
+    const [initLoad, setInitLoad] = useState(true);
+
     let individualTest = props.location.state.test
     const [singleSubTest, setSingleSubTest] = useState(individualTest);
     const [userInputObj, setUserInputObj] = useState({});
@@ -54,6 +57,14 @@ const ChildTestDetail = (props) => {
     const [open, setOpen] = React.useState(false);
     const [clickCount, setClickCount] = React.useState(0);
 
+    // useEffect gets called when [singleSubTest] changes
+    useEffect(() => {
+        if(!initLoad) {
+            console.log("singleSubTest updated!")
+            console.log("singleSubTest:", singleSubTest)
+            props.singleTestUpdate(singleSubTest);
+        }
+    }, [singleSubTest]);
 
     const updateState = () => {
         if (newUserInputDataType.current === null) console.log("userinput---dataType equals NULL")
@@ -90,16 +101,16 @@ const ChildTestDetail = (props) => {
 
         // console.log("singleSubTest=", singleSubTest)
         // update subtest within parent test
-        props.singleTestUpdate(singleSubTest);
+        // props.singleTestUpdate(singleSubTest);
 
-        let cclick = clickCount
-        cclick += 1
-        setClickCount(cclick);
-        console.log("clickCount:", clickCount)
-        if (clickCount === 2) {
-            setOpen(true);
-            setClickCount(0);
-        }
+        // let cclick = clickCount
+        // cclick += 1
+        // setClickCount(cclick);
+        // console.log("clickCount:", clickCount)
+        // if (clickCount === 2) {
+        //     setOpen(true);
+        //     setClickCount(0);
+        // }
     }
 
     // DropDown - "userInput": "dataType"
@@ -315,8 +326,10 @@ const ChildTestDetail = (props) => {
                     <button class="ui blue button"
                         onClick={() => {
                             updateState();
+                            setInitLoad(false);
+                            setOpen(true);
                         }}>
-                        3x Click to Update
+                        Update
                     </button>
                 </div>
             </div>

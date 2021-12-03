@@ -25,7 +25,11 @@ const ParentTestDetail = (props) => {
         console.log("CHILD TESTS:", childTests)
     }
 
-
+    // useEffect called when async setChildTests is completed
+    useEffect(() => {
+        console.log("ParentTestDetail.js - childTests updated!")
+        props.parentTestUpdate(childTests);
+    }, [childTests])
     // Parse singleSubTest from Child(ChildTestDetail.js) ---> Parent(ParentTestDetail.js)
     const onSingleTestUpdate = (singleSubTest) => {
         console.log("ParentTestDetail.js-onSingleTestUpdate()")
@@ -35,8 +39,7 @@ const ParentTestDetail = (props) => {
         setChildTests(childTests => childTests.map(
             obj => obj.id === singleSubTest.id ? singleSubTest : obj
         ));
-
-        props.parentTestUpdate(childTests);
+        // props.parentTestUpdate(childTests);
     }
 
     return (
