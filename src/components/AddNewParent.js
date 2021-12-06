@@ -3,8 +3,8 @@ import { Link, useHistory } from 'react-router-dom';
 import { Button, Header, Image, Modal, Dropdown } from 'semantic-ui-react'
 import "../styles/App.css";
 
-const AddNew = (props) => {
-    console.log("AddNew--props: ", props)
+const AddNewParent = (props) => {
+    console.log("AddNewParent--props: ", props)
     let history = useHistory();
 
     const testsArraySize = props.tests.length;
@@ -140,4 +140,4 @@ const AddNew = (props) => {
     )
 };
 
-export default AddNew;
+export default AddNewParent;

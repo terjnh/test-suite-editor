@@ -8,7 +8,7 @@ const ParentTestDetail = (props) => {
 
     const { id, name, subtests } = props.location.state.test;
     // console.log("ParentTestDetail:", props.location.state.test);
-    // console.log("ParentTestDetail-id:", id);
+    console.log("ParentTestDetail-id:", id);
 
 
     // testing subtests deconstruction

@@ -6,7 +6,9 @@ import Header from "./Header";
 import api from '../api/config';
 import ParentTest from "./ParentTest";
 import ParentTestDetail from "./ParentTestDetail";
-import AddNew from "./AddNew"
+import AddNewParent from "./AddNewParent"
+import AddNewChild_ParentSelect from "./AddNewChild_ParentSelect";
+import AddNewChild from "./AddNewChild";
 
 function App() {
     const [tests, setTests] = useState([]);
@@ -31,7 +33,7 @@ function App() {
     }, []);
 
     useEffect(() => {
-        
+
     }, [tests]);
 
 
@@ -58,7 +60,7 @@ function App() {
         console.log(testObj);
 
         configJsonAddNewParent(testObj);
-        
+
     }
 
 
@@ -89,18 +91,40 @@ function App() {
                             />
                         )}
                     />
-
                     <Route
-                        path="/addNew"
+                        path="/addNewChild/:id"
                         exact
                         render={(props) => (
-                            <AddNew
+                            <AddNewChild
+                                {...props}
+                                tests={tests}
+                            />
+                        )}
+                    />
+
+                    <Route
+                        path="/addNewParent"
+                        exact
+                        render={(props) => (
+                            <AddNewParent
                                 {...props}
                                 tests={tests}
                                 addNewTest={onAddNewTest}
                             />
                         )}
                     />
+
+                    <Route
+                        path="/addNewChild_ParentSelect"
+                        exact
+                        render={(props) => (
+                            <AddNewChild_ParentSelect
+                                {...props}
+                                tests={tests}
+                            />
+                        )}
+                    />
+
 
                     <Route
                         path="/:id"
@@ -112,7 +136,6 @@ function App() {
                             />
                         )}
                     />
-
 
                 </Switch>
             </Router>

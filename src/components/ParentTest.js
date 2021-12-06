@@ -22,13 +22,22 @@ const ParentTest = (props) => {
 
             <div className="ui celled list">
                 <Link to={{
-                    pathname: `/addNew`
+                    pathname: `/addNewParent`
                 }}>
                     <button class="ui red button">
                         Add New Parent Test
                     </button>
                 </Link>
+
+                <Link to={{
+                    pathname: `\addNewChild_ParentSelect`
+                }}>
+                    <button class="ui blue button">
+                        Add New Sub-Test
+                    </button>
+                </Link>
             </div>
+
         </div>
 
     );
