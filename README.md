@@ -30,17 +30,10 @@
 
 ## Commit message:
 v0.0.5
-- Changed '3x click to update' in ChildTestDetail.
-  - Used useEffect to trigger an update method when asynchronous setState is complete
-- Add new parent test 
-  - Add button text changed
-  - "subtests" key-value added
+- sent new sub-test object to App.js
 
 ## TODO:
-- After adding parent test, need to bring user back to home screen
-  - If not, there will be an error as the 'ID' needs to be regenerated
-
-
+- Implement App.js handling of new sub-test appending to appropriate parent test.
 
 
 

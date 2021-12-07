@@ -15,12 +15,12 @@ const AddNewChild_ParentTestItem = (props) => {
                     state: { test: props.test }
                 }}>
                     <button class="ui blue button">
-                        {id} ::::: {name}
+                        {id}: {name}
                     </button>
                 </Link>
             </div>
 
-            <br></br><br></br>
+            <br></br>
         </div>
     )
 }

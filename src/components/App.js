@@ -33,7 +33,6 @@ function App() {
     }, []);
 
     useEffect(() => {
-
     }, [tests]);
 
 
@@ -60,7 +59,11 @@ function App() {
         console.log(testObj);
 
         configJsonAddNewParent(testObj);
+    }
 
+    const onAddNewSubTest = (newSubTest) => {
+        console.log("App.js->newSubTest:", newSubTest)
+        //TODO: Implement addition of subtest into appropriate parent test
     }
 
 
@@ -98,6 +101,7 @@ function App() {
                             <AddNewChild
                                 {...props}
                                 tests={tests}
+                                addNewSubTest={onAddNewSubTest}
                             />
                         )}
                     />
