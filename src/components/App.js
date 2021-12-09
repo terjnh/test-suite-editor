@@ -62,8 +62,17 @@ function App() {
     }
 
     const onAddNewSubTest = (newSubTest) => {
-        console.log("App.js->newSubTest:", newSubTest)
-        //TODO: Implement addition of subtest into appropriate parent test
+        // console.log("App.js->newSubTest:", newSubTest)
+        const parentTestId = newSubTest.id.split("_")[0];
+        for (var i = 0; i < tests.length; i++) {
+            var obj = tests[i];
+            // console.log("testID...", obj.id);
+            if (parentTestId === obj.id) {
+                console.log("SubtestsInParent:", tests[i].subtests.tests)
+                tests[i].subtests.tests.push(newSubTest)
+            }
+        }
+        configJsonUpdateTests(tests)
     }
 
 
@@ -76,6 +85,19 @@ function App() {
 
     const configJsonAddNewParent = async (testObj) => {
         const response = await api.post(`/tests/`, testObj)
+    }
+
+    const configJsonUpdateTests = async (tests) => {
+        // Delete each parent test
+        for (var i = 1; i <= tests.length; i++) {
+            let currentParentTestID = "TEST" + i.toString();
+            console.log("Delete test---", currentParentTestID)
+            const deleteRes = await api.delete(`/tests/${currentParentTestID}`)
+        }
+        // Add each updated parent test
+        for (var i = 0; i < tests.length; i++) {
+            const deleteRes = await api.post(`/tests/`, tests[i])
+        }
     }
 
 
@@ -161,5 +183,4 @@ function App() {
     );
 
 }
-
 export default App;

@@ -30,10 +30,11 @@
 
 ## Commit message:
 v0.0.5
-- sent new sub-test object to App.js
+- configJsonUpdateTests() in App.js
+  - able to add sub-tests with minimal parameters
 
 ## TODO:
-- Implement App.js handling of new sub-test appending to appropriate parent test.
+- Implement more parameters when adding subtests
 
 
 
