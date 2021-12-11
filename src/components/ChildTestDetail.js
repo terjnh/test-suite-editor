@@ -125,7 +125,8 @@ const ChildTestDetail = (props) => {
     const userInputTypeOptions = [
         { text: 'boolean', value: 'boolean' },
         { text: 'action', value: 'action' },
-        { text: 'data', value: 'data' }
+        { text: 'data', value: 'data' },
+        { text: 'string', value: 'string' }
     ]
     const onUserinputTypeDropdownChanged = (e, data) => {
         newUserInputType = data.value;

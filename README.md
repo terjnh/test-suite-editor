@@ -30,11 +30,10 @@
 
 ## Commit message:
 v0.0.5
-- configJsonUpdateTests() in App.js
-  - able to add sub-tests with minimal parameters
+- Adding subtests with more parameters
 
 ## TODO:
-- Implement more parameters when adding subtests
+- Send user back to home page and refresh to retrieve updated Json-server data
 
 
 
