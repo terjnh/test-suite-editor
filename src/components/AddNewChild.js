@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useHistory } from 'react-router-dom';
-import { Dropdown } from 'semantic-ui-react'
+import { Dropdown, Button, Modal, Image } from 'semantic-ui-react'
 import "../styles/App.css";
 
 
@@ -24,6 +24,9 @@ const AddNewChild = (props) => {
     let newUserInputType = React.createRef();
     let newCmdResultDataType = React.createRef();
     let newCmdResultMatch = React.createRef();
+
+    // modal
+    const [modalOpen, setModalOpen] = React.useState(false);
 
 
     // useEffect gets called when [newSubTest] changes
@@ -210,15 +213,48 @@ const AddNewChild = (props) => {
             </div>
 
 
-
-
             <br></br><br></br>
             <button className="button-tealBg-whiteText"
                 onClick={() => {
                     addNewSubTestObj();
                     setInitLoad(false);
+                    setModalOpen(true);
                 }}>  Add
             </button>
+
+
+
+
+            {/* Modal */}
+            <Modal
+                onClose={() => setModalOpen(false)}
+                onOpen={() => setModalOpen(true)}
+                open={modalOpen}
+            // trigger={<Button>Show Modal</Button>}
+            >
+                <Modal.Header>{newSubTestID}</Modal.Header>
+                <Modal.Content image>
+                    <Image size='small' src='https://react.semantic-ui.com/images/wireframe/image.png' wrapped />
+                    <Modal.Description>
+                        {/* <Header>Default Profile Image</Header> */}
+                        <p> {newSubTestID} has been added! </p>
+                    </Modal.Description>
+                </Modal.Content>
+                <Modal.Actions>
+                    {/* <Button color='black' onClick={() => setOpen(false)}> Nope </Button> */}
+                    <Button
+                        content="Okay"
+                        labelPosition='right'
+                        icon='checkmark'
+                        onClick={() => {
+                            setModalOpen(false);
+                            routeToHome();
+                            window.location.reload(false);
+                        }}
+                        positive
+                    />
+                </Modal.Actions>
+            </Modal>
         </div>
     )
 

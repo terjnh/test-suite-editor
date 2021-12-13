@@ -29,11 +29,11 @@
 
 
 ## Commit message:
-v0.0.5
-- Adding subtests with more parameters
+v0.0.6
+- onComplete of adding subtest pushes user back to HOME and refreshes
 
 ## TODO:
-- Send user back to home page and refresh to retrieve updated Json-server data
+- Delete of parent test
 
 
 
