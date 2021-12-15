@@ -24,7 +24,7 @@ const ParentTest = (props) => {
                 <Link to={{
                     pathname: `/addNewParent`
                 }}>
-                    <button class="ui red button">
+                    <button class="ui blue button">
                         Add New Parent Test
                     </button>
                 </Link>
@@ -34,6 +34,16 @@ const ParentTest = (props) => {
                 }}>
                     <button class="ui blue button">
                         Add New Sub-Test
+                    </button>
+                </Link>
+
+                <br></br><br></br>
+
+                <Link to={{
+                    pathname: `\deleteParent`
+                }}>
+                    <button class="ui red button">
+                        Delete Parent Test
                     </button>
                 </Link>
             </div>

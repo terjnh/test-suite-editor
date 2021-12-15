@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import AddNewChild from "./AddNewChild";
 
 const AddNewChild_ParentTestItem = (props) => {
-    console.log("AddNewChild_ParentTestItem---props:", props)
+    // console.log("AddNewChild_ParentTestItem---props:", props)
     // destructure
     const { id, name } = props.test;
     return (

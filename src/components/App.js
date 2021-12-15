@@ -9,6 +9,7 @@ import ParentTestDetail from "./ParentTestDetail";
 import AddNewParent from "./AddNewParent"
 import AddNewChild_ParentSelect from "./AddNewChild_ParentSelect";
 import AddNewChild from "./AddNewChild";
+import DeleteParent from "./DeleteParent";
 
 function App() {
     const [tests, setTests] = useState([]);
@@ -73,6 +74,10 @@ function App() {
             }
         }
         configJsonUpdateTests(tests)
+    }
+
+    const onDeleteParent = (testID) => {
+        console.log("App.js-testID:", testID)
     }
 
 
@@ -147,6 +152,18 @@ function App() {
                             <AddNewChild_ParentSelect
                                 {...props}
                                 tests={tests}
+                            />
+                        )}
+                    />
+
+                    <Route
+                        path="/deleteParent"
+                        exact
+                        render={(props) => (
+                            <DeleteParent
+                                {...props}
+                                tests={tests}
+                                onDeleteParent={onDeleteParent}
                             />
                         )}
                     />

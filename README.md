@@ -30,7 +30,8 @@
 
 ## Commit message:
 v0.0.6
-- onComplete of adding subtest pushes user back to HOME and refreshes
+- Pop-up modal when user selects a test for deletion
+- Parse parent testID to App.js for deletion
 
 ## TODO:
 - Delete of parent test
