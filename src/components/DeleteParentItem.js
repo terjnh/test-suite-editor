@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
-import { BrowserRouter as Link } from "react-router-dom";
+import { BrowserRouter as Link, useHistory } from "react-router-dom";
 import { Button, Header, Image, Modal, Dropdown } from 'semantic-ui-react'
 
 const DeleteParentItem = (props) => {
     console.log("DeleteParentItem---props:", props);
+    let history = useHistory();
 
     // destructure
     const { id, name } = props.test;
@@ -20,6 +21,12 @@ const DeleteParentItem = (props) => {
     const deleteParentTest = (selectedID) => {
         console.log("selectedID:", selectedID)
         setTestID(selectedID);
+    }
+
+
+    const routeToHome = () => {
+        let path = `/`;
+        history.push(path);
     }
 
 

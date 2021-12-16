@@ -20,6 +20,7 @@ function App() {
         return response.data;
     }
 
+
     // Upon page refresh, we will retrieve all tests from ../test-suite-server/config.json
     useEffect(() => {
         const getAllTests = async () => {
@@ -63,11 +64,11 @@ function App() {
     }
 
     const onAddNewSubTest = (newSubTest) => {
-        // console.log("App.js->newSubTest:", newSubTest)
+        console.log("App.js->newSubTest:", newSubTest)
         const parentTestId = newSubTest.id.split("_")[0];
         for (var i = 0; i < tests.length; i++) {
             var obj = tests[i];
-            // console.log("testID...", obj.id);
+            console.log("testID...", obj.id);
             if (parentTestId === obj.id) {
                 console.log("SubtestsInParent:", tests[i].subtests.tests)
                 tests[i].subtests.tests.push(newSubTest)
@@ -76,8 +77,10 @@ function App() {
         configJsonUpdateTests(tests)
     }
 
-    const onDeleteParent = (testID) => {
+    const onDeleteParent = async (testID) => {
         console.log("App.js-testID:", testID)
+        const response = await api.delete(`/tests/${testID}`)
+        window.location.reload(false);
     }
 
 

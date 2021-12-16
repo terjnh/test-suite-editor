@@ -5,6 +5,7 @@ import "../styles/App.css";
 
 
 const AddNewChild = (props) => {
+    console.log("AddNewChild.js. props:", props);
     console.log("AddNewChild.js loaded. TEST:", props.location.state.test)
     let history = useHistory();
 

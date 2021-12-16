@@ -29,12 +29,12 @@
 
 
 ## Commit message:
-v0.0.6
-- Pop-up modal when user selects a test for deletion
-- Parse parent testID to App.js for deletion
+v0.0.7
+- Added instructions in main page
+- Completed delete parent test functionality
 
 ## TODO:
-- Delete of parent test
+- 
 
 
 
