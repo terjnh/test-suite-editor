@@ -2,6 +2,6 @@
 import axios from 'axios';
 
 export default axios.create({
-    // baseURL:"http://localhost:3006/"
-    baseURL: "https://test-suite-server-heroku.herokuapp.com/"
+    baseURL:"http://localhost:3006/"
+    // baseURL: "https://test-suite-server-heroku.herokuapp.com/"
 })

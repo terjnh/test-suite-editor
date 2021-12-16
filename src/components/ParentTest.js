@@ -23,10 +23,12 @@ const ParentTest = (props) => {
 
             <div class="column">
                 <div>
+                    <p className="subheader-teal-h1">Select test to edit:</p>
                     <div className="ui celled list">
                         {renderParentTestList}
                     </div>
 
+                    <p className="subheader-teal-h1">Add a new test:</p>
                     <div className="ui celled list">
                         <Link to={{
                             pathname: `/addNewParent`
@@ -43,7 +45,9 @@ const ParentTest = (props) => {
                                 Add New Sub-Test
                             </button>
                         </Link>
-                        <br></br><br></br>
+                        <br></br><br></br><br></br>
+
+                        <p className="subheader-teal-h1">Delete tests:</p>
                         <Link to={{
                             pathname: `\deleteParent`
                         }}>
